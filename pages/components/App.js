@@ -2,8 +2,8 @@ import React from 'react';
 import gql from 'graphql-tag'
 // import { graphql } from 'react-apollo'
 import { compose, graphql } from "react-apollo";
-import ListCoins from '../models/GraphQLAllCoins';
-import NewCoin from '../models/GraphQLNewCoin';
+// import ListCoins from '../models/GraphQLAllCoins';
+// import NewCoin from '../models/GraphQLNewCoin';
 import { graphqlMutation } from 'aws-appsync-react' 
 
 
@@ -18,6 +18,42 @@ const listCoins = gql`
     }
   }
 `
+
+const listCoinDynamo = gql`
+query {
+    listCoins {
+        items{
+            price_usd
+            name
+            symbol
+            notes
+            rank
+            id
+            fav
+        } 
+    }
+}`
+
+const NewCoin = gql`mutation createCoin(
+  $id: ID
+  $name: String
+  $price_usd: String
+  $rank: String
+  $symbol: String
+  $fav: Boolean
+  $notes: String
+) {
+      createCoin(input:{id:$id name:$name price_usd:$price_usd rank:$rank symbol:$symbol fav: $fav notes: $notes})
+      {
+        id
+        name
+        price_usd
+        rank
+        symbol
+        fav
+        notes
+      }
+}`;
 
 class App extends React.Component {
 
@@ -66,7 +102,7 @@ class Coins extends React.Component {
 }
 
 // const AddCoinsOffline = graphql(NewCoin, ListCoins, 'Coin')(Coins);
-const AllCoinsWithData = graphql(ListCoins)(Coins);
+const AllCoinsWithData = graphql(listCoinDynamo)(Coins);
 
 // class AddCoin extends React.Component {
 //   state = { id: '', name: '', price_usd: '' }
@@ -106,7 +142,7 @@ const AllCoinsWithData = graphql(ListCoins)(Coins);
 
 
 export default compose(
-  graphqlMutation(NewCoin, ListCoins, 'Coin'),
+  graphqlMutation(NewCoin, listCoinDynamo, 'Coin'),
   graphql(listCoins, {
     options: {
       fetchPolicy: 'cache-and-restart'
