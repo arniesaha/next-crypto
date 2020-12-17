@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nextcrypto-dev-150927-authRole",
+      "UnauthRoleArn": "arn:aws:iam::719931412214:role/amplify-nextcrypto-dev-150927-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::719931412214:role/amplify-nextcrypto-dev-150927-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-nextcrypto-dev-150927-deployment",
+      "UnauthRoleName": "amplify-nextcrypto-dev-150927-unauthRole",
+      "StackName": "amplify-nextcrypto-dev-150927",
+      "StackId": "arn:aws:cloudformation:us-east-1:719931412214:stack/amplify-nextcrypto-dev-150927/db970ce0-3f82-11eb-968e-0e892a71c9a9",
+      "AmplifyAppId": "d2ie4kioswfpmz"
+    }
+  }
+}

@@ -1,15 +1,29 @@
 {
-  "name": "next-crypto",
-  "version": "0.1.0",
-  "private": true,
+  "name": "appsync-next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
     "build": "next build",
     "start": "next start"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "next": "10.0.3",
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "@aws-amplify/ui-react": "^0.2.21",
+    "aws-amplify": "^3.3.1",
+    "emotion": "^10.0.27",
+    "aws-appsync": "^1.0.22",
+    "aws-appsync-react": "^4.0.1",
+    "graphql-tag": "^2.9.2",
+    "next": "9.5.3",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "next-apollo-appsync": "^0.0.7",
+    "react-apollo": "^2.1.4",
+    "uuid": "^3.2.1"
   }
 }
