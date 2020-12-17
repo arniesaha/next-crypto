@@ -36,8 +36,8 @@ class App extends React.Component {
           notes: ''
       }
 
-      // console.log(coinItem);
-      // this.props.createCoin(coinItem);
+      console.log(coinItem);
+      this.props.createCoin(coinItem);
     
     })        
   }

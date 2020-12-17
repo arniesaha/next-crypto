@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export default gql`mutation createCoin(
-  $id: Int
+  $id: ID
   $name: String
   $price_usd: String
   $rank: String
