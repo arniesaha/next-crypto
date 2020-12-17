@@ -2,8 +2,8 @@ import React from 'react';
 import gql from 'graphql-tag'
 // import { graphql } from 'react-apollo'
 import { compose, graphql } from "react-apollo";
-import ListCoins from './GraphQLAllCoins';
-import NewCoin from './GraphQLNewCoin';
+import ListCoins from '../models/GraphQLAllCoins';
+import NewCoin from '../models/GraphQLNewCoin';
 import { graphqlMutation } from 'aws-appsync-react' 
 
 
