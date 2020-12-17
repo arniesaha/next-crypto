@@ -1,9 +1,17 @@
 import AWSAppSyncClient from 'aws-appsync'
-import AppSyncConfig from './aws-exports'
+// import AppSyncConfig from './aws-exports'
 import { ApolloProvider } from 'react-apollo'
 import { Rehydrated } from 'aws-appsync-react' // this needs to also be installed when working with React
 
 import App from './components/App'
+
+const AppSyncConfig = {
+  "aws_project_region": "us-east-1",
+  "aws_appsync_graphqlEndpoint": "https://qvgxgekg7zhbdlng4gld4jnkqi.appsync-api.us-east-1.amazonaws.com/graphql",
+  "aws_appsync_region": "us-east-1",
+  "aws_appsync_authenticationType": "API_KEY",
+  "aws_appsync_apiKey": "da2-tixt5mvpmngtjgmxze34hi3wri"
+};
 
 const client = new AWSAppSyncClient({
   url: AppSyncConfig.aws_appsync_graphqlEndpoint,
