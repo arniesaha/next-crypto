@@ -1,5 +1,4 @@
 import AWSAppSyncClient from 'aws-appsync'
-// import AppSyncConfig from './aws-exports'
 import { ApolloProvider } from 'react-apollo'
 import { Rehydrated } from 'aws-appsync-react' // this needs to also be installed when working with React
 
