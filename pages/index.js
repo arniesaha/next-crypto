@@ -27,9 +27,10 @@ Amplify.configure({
 const client = new AWSAppSyncClient({
   url: AppSyncConfig.aws_appsync_graphqlEndpoint,
   region: AppSyncConfig.aws_appsync_region,
+  disableOffline: true,
   auth: {
     type: AppSyncConfig.aws_appsync_authenticationType,
-    // apiKey: AppSyncConfig.aws_appsync_apiKey,
+    // apiKey: AppSyncConfig.aws_appsync_apiKe,y,
     jwtToken: async () => (await Auth.currentSession()).getAccessToken().getJwtToken(), // Required when you use Cognito UserPools OR OpenID Connect. token object is obtained previously
   }
 })

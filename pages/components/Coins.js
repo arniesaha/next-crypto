@@ -51,6 +51,8 @@ class Coins extends React.Component {
       editing: {},
       edits: {}
     };
+
+    
   
     componentDidMount(){
       this.props.data.subscribeToMore(
@@ -147,7 +149,28 @@ class Coins extends React.Component {
           </div>
           </Paper>);
     }
-  
+    
+
+    createCoinFromAPI = (coins) => {
+    // console.log(coins);
+    
+        coins.map((coin) => {
+
+        const coinItem = {
+            id: parseInt(coin.id),
+            name: coin.name,
+            price_usd: coin.price_usd,
+            rank: parseInt(coin.rank),
+            symbol: coin.symbol,
+            fav: false,
+            notes: ''
+        }
+
+        // console.log(coinItem);
+        // this.props.createCoin(coinItem);
+        
+        })        
+    }
   
     render() {
       const { listCoins, refetch } = this.props.data;

@@ -148,7 +148,7 @@ const AllCoinsWithData = compose(
   graphqlMutation(UpdateCoin, listCoinDynamo, 'Coin')
  )(Coins);
 
-export default withAuthenticator(App);
+ export default withAuthenticator(App);
 // export default compose(
 //   graphqlMutation(NewCoin, listCoinDynamo, 'Coin'),
 //   graphql(listCoins, {
