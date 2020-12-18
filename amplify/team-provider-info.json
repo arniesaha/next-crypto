@@ -10,6 +10,11 @@
       "StackName": "amplify-nextcrypto-dev-150927",
       "StackId": "arn:aws:cloudformation:us-east-1:719931412214:stack/amplify-nextcrypto-dev-150927/db970ce0-3f82-11eb-968e-0e892a71c9a9",
       "AmplifyAppId": "d2ie4kioswfpmz"
+    },
+    "categories": {
+      "auth": {
+        "nextcrypto44bd34f6": {}
+      }
     }
   }
 }
