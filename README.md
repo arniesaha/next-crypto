@@ -35,8 +35,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-
-![Screenshot](https://amplify-nextcrypto-dev-150927-deployment.s3.amazonaws.com/Screenshot+2020-12-19+at+6.27.39+PM.png)
+<img src="https://amplify-nextcrypto-dev-150927-deployment.s3.amazonaws.com/Screenshot+2020-12-19+at+6.27.39+PM.png" width="300" height="500">
 
 Deployed on AWS EC2 via pm2
 ```bash
