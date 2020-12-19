@@ -6,6 +6,7 @@ import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import React from 'react';
 import gql from 'graphql-tag'
 import { buildSubscription } from 'aws-appsync';
+import { Button } from '@material-ui/core';
 
 const SubscribeCoins = gql`
     subscription{
@@ -142,8 +143,9 @@ class Coins extends React.Component {
             <h4 style={{display: 'flex', justifyContent: 'center'}}>{coin.symbol}</h4>
             <h4 style={{display: 'flex', justifyContent: 'center'}}>{coin.price_usd}</h4>
             <h4 style={{display: 'flex', justifyContent: 'center'}}>{coin.rank}</h4>
-            <h4 style={{display: 'flex', justifyContent: 'center'}}>{coin.notes}</h4>
-            <FormControlLabel style={{display: 'flex', justifyContent: 'center'}}
+            {/* <h4 style={{display: 'flex', justifyContent: 'center'}}>{coin.notes}</h4> */}
+            <input type="text" value={coin.notes || ''} onChange={this.onChange.bind(this, coin, 'notes')} placeholder="Notes"/>
+            <FormControlLabel style={{display: 'flex', marginLeft: '20px', justifyContent: 'center'}}
               control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} name="checkedH" checked={coin.fav === true} onChange={this.onChange.bind(this, coin, 'fav') }/>}
             />
           </div>
@@ -151,26 +153,7 @@ class Coins extends React.Component {
     }
     
 
-    createCoinFromAPI = (coins) => {
-    // console.log(coins);
     
-        coins.map((coin) => {
-
-        const coinItem = {
-            id: parseInt(coin.id),
-            name: coin.name,
-            price_usd: coin.price_usd,
-            rank: parseInt(coin.rank),
-            symbol: coin.symbol,
-            fav: false,
-            notes: ''
-        }
-
-        // console.log(coinItem);
-        // this.props.createCoin(coinItem);
-        
-        })        
-    }
   
     render() {
       const { listCoins, refetch } = this.props.data;
@@ -181,7 +164,9 @@ class Coins extends React.Component {
               <ul>{listCoins && [...listCoins.items].sort((a, b) => a.name.localeCompare(b.name)).map(this.renderCoin)}</ul>
           </div>
           <div style={{display: 'flex', justifyContent: 'center'}}>
-            <button onClick={() => refetch()}>Refresh</button> 
+          <Button style={{display: 'flex', justifyContent: 'center',  marginLeft: '40px'}} variant="contained" color="primary" onClick={() => refetch()}>
+            Refresh
+          </Button>
           </div>
           
         </React.Fragment>

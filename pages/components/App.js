@@ -148,6 +148,18 @@ const AllCoinsWithData = compose(
   graphqlMutation(UpdateCoin, listCoinDynamo, 'Coin')
  )(Coins);
 
+//  const AllCoinsWithRefreshData = compose(
+  //   graphqlMutation(NewCoin, listCoinDynamo, 'Coin'),
+  //   graphql(listCoins, {
+  //     options: {
+  //       fetchPolicy: 'cache-and-restart'
+  //     },
+  //     props: props => ({
+  //       coins: props.data.listCoinsAPI
+  //     })
+  //   })
+  // )(App);
+
  export default withAuthenticator(App);
 // export default compose(
 //   graphqlMutation(NewCoin, listCoinDynamo, 'Coin'),
