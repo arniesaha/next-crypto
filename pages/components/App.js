@@ -98,7 +98,7 @@ class App extends React.Component {
     })
   }
   // createCoinFromAPI = (coins) => {
-  //   // console.log(coins);
+  //   console.log(coins);
     
   //   coins.map((coin) => {
 
@@ -137,38 +137,24 @@ class App extends React.Component {
           </Toolbar>
         </AppBar>
         <AllCoinsWithData />
-        {/* {this.createCoinFromAPI(this.props.coins)} */}
       </React.Fragment>
     );
   }
 }
 
 const AllCoinsWithData = compose(
+  graphqlMutation(NewCoin, listCoinDynamo, 'Coin'),
   graphql(listCoinDynamo),
-  graphqlMutation(UpdateCoin, listCoinDynamo, 'Coin')
+  graphqlMutation(UpdateCoin, listCoinDynamo, 'Coin'),
+  graphql(listCoins, {
+    options: {
+      fetchPolicy: 'cache-and-restart'
+    },
+    props: props => ({
+      coins: props.data.listCoinsAPI
+    })
+  })
  )(Coins);
 
-//  const AllCoinsWithRefreshData = compose(
-  //   graphqlMutation(NewCoin, listCoinDynamo, 'Coin'),
-  //   graphql(listCoins, {
-  //     options: {
-  //       fetchPolicy: 'cache-and-restart'
-  //     },
-  //     props: props => ({
-  //       coins: props.data.listCoinsAPI
-  //     })
-  //   })
-  // )(App);
 
- export default withAuthenticator(App);
-// export default compose(
-//   graphqlMutation(NewCoin, listCoinDynamo, 'Coin'),
-//   graphql(listCoins, {
-//     options: {
-//       fetchPolicy: 'cache-and-restart'
-//     },
-//     props: props => ({
-//       coins: props.data.listCoinsAPI
-//     })
-//   })
-// )(App);
+export default withAuthenticator(App);

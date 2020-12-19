@@ -45,15 +45,11 @@ query {
     }
 }`
 
-
-
 class Coins extends React.Component {
     state = {
       editing: {},
       edits: {}
     };
-
-    
   
     componentDidMount(){
       this.props.data.subscribeToMore(
@@ -151,9 +147,6 @@ class Coins extends React.Component {
           </div>
           </Paper>);
     }
-    
-
-    
   
     render() {
       const { listCoins, refetch } = this.props.data;
@@ -173,5 +166,6 @@ class Coins extends React.Component {
       )
     }
   }
+
 
 export default Coins;
