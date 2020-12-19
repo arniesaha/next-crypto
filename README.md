@@ -4,6 +4,7 @@
 - Authentication: [AWS Amplify & Cognito Pools](https://docs.aws.amazon.com/appsync/latest/devguide/welcome.html)
 - Database: [DynamoDB](https://aws.amazon.com/dynamodb/)
 - GraphQL: [AWS AppSync](https://aws.amazon.com/appsync/) (Server) & [AWS AppSync React & Apollo](https://aws.amazon.com/appsync/resources/) (Client)
+- React & Material UI
 
 Let's user's authenticate and login to view a list of "Crypto" coins:
 ##API: https://api.coinlore.com/api/tickers/
@@ -34,6 +35,13 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+
+![alt text](https://amplify-nextcrypto-dev-150927-deployment.s3.amazonaws.com/Screenshot+2020-12-19+at+6.27.39+PM.png)
+
+Deployed on AWS EC2 via pm2
+```bash
+pm2 start "npm run dev" --name crypto --exp-backoff-restart-delay=100
+```
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
