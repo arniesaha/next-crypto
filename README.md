@@ -1,9 +1,9 @@
 ## Next-crypto: is a demo project based on Nextjs boilerplate. 
 
 ## Features:
-Authentication: [AWS Amplify & Cognito Pools](https://docs.aws.amazon.com/appsync/latest/devguide/welcome.html)
-Database: [DynamoDB](https://aws.amazon.com/dynamodb/)
-GraphQL: [AWS AppSync](https://aws.amazon.com/appsync/) (Server) & [AWS AppSync React & Apollo](https://aws.amazon.com/appsync/resources/) (Client)
+- Authentication: [AWS Amplify & Cognito Pools](https://docs.aws.amazon.com/appsync/latest/devguide/welcome.html)
+- Database: [DynamoDB](https://aws.amazon.com/dynamodb/)
+- GraphQL: [AWS AppSync](https://aws.amazon.com/appsync/) (Server) & [AWS AppSync React & Apollo](https://aws.amazon.com/appsync/resources/) (Client)
 
 Let's user's authenticate and login to view a list of "Crypto" coins:
 ##API: https://api.coinlore.com/api/tickers/
